@@ -1,4 +1,4 @@
-package com.yichin.leetcode.P292_NimGame;
+package com.yichin.leetcode.easy.P292_NimGame;
 
 /*
  * You are playing the following Nim Game with your friend: There is a heap of stones on the table, each time one of you take turns to remove 1 to 3 stones. 
@@ -8,7 +8,7 @@ package com.yichin.leetcode.P292_NimGame;
 */
 public class Solution {
 	/*
-	 * 思路: 從base case往後推
+	 * �?路: 從base case往後推
 	 * 剩1,2,3個 -> 直接全拿光 win
 	 * 剩4個 -> 必輸
 	 * 剩5,6,7個 -> 拿到剩4個 win

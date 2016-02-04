@@ -1,4 +1,4 @@
-package com.yichin.leetcode.P258_AddDigits;
+package com.yichin.leetcode.easy.P258_AddDigits;
 
 public class Main {
 
