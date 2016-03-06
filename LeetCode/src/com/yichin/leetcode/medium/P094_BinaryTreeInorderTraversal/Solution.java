@@ -27,7 +27,7 @@ public class Solution {
        Stack<TreeNode> stack = new Stack<TreeNode>();
        TreeNode cur = root;
        
-       // 已經考慮了root是null狀�?
+       // 已經考慮了root是null狀況...
        while(cur!=null || !stack.isEmpty()){
            while(cur!=null){// Travel to the left leaf
                stack.push(cur);

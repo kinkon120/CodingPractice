@@ -22,11 +22,13 @@ public class Solution {
             diff ^= num;
         }
         // now diff only contains value of two special numbers
+        // Get its last set bit --> 找到rightmost 1
+        // 兩個數字中，這個bit一定不一樣
         diff = diff & -diff;
         
         int [] result = new int [2];
         for(int num : nums){
-            if( (diff & num) == 0){ // ?????
+            if( (diff & num) == 0){ // 注意優先權
                 result[0]^=num;
             }
             else{
