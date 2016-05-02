@@ -1,6 +1,5 @@
 package com.yichin.leetcode.easy.P242_ValidAnagram;
 
-import java.util.Arrays;
 
 public class Solution {
 /*

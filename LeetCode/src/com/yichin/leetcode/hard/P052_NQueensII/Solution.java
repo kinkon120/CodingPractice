@@ -1,4 +1,4 @@
-package com.yichin.leetcode.hard.P52_NQueensII;
+package com.yichin.leetcode.hard.P052_NQueensII;
 /*
 Follow up for N-Queens problem.
 Now, instead outputting board configurations, return the total number of distinct solutions.
