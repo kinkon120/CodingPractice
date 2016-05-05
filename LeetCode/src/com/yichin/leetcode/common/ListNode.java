@@ -1,4 +1,4 @@
-package src.com.yichin.leetcode.common;
+package com.yichin.leetcode.common;
 
 public class ListNode {
     int val;
