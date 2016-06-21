@@ -17,6 +17,18 @@ public class Solution {
         // https://leetcode.com/discuss/10493/easy-to-understand-java-solution
         // 比較系統化的做法: 用n個StringBuilder
     	// 12 ms
+    	
+    	// 先列舉長度13字串, 4rows
+    	// 0     6       12
+    	// 1   5 7    11
+    	// 2 4   8 10
+    	// 3     9
+    	// row one we have 0, 6, 12.
+    	// go down and climb up, each iteration takes 6 (0~5) steps
+    	// 6 = n + n - 2
+    	// go down 4 steps (n)
+    	// climb up 2 steps (n-2)
+    	
         int n = numRows;
         char [] ca = s.toCharArray();
         int len = ca.length;

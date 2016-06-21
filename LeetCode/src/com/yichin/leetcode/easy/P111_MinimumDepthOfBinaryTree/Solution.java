@@ -49,6 +49,7 @@ public class Solution {
         while(curList.size()!=0){
             List<TreeNode> nextList = new ArrayList<TreeNode>();
             for(TreeNode tn : curList){
+            	// found a leaf
                 if(tn.left == null && tn.right==null)   return depth;
                 
                 if(tn.left!=null)   nextList.add(tn.left);

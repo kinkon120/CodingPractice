@@ -9,6 +9,10 @@ public class Solution {
         if(nums==null || nums.length==0) return 0;
         
         //https://leetcode.com/discuss/3753/my-solution-for-your-reference
+        // in place modification
+        // 1 2 2 2 2 3 2 4 6, val =2
+        // result 1 3 4 6 || 2 3 2 4 6
+        // begin value 為4
         int begin=0;
         for(int i=0;i<nums.length;i++){
             if(nums[i]!=val){

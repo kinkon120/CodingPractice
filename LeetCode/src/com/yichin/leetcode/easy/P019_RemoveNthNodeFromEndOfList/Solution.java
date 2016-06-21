@@ -38,23 +38,38 @@ public class Solution {
         
         // 只能一個pass, 所以要用兩個pointer, 一個先走n步
         
+    	// 1-2-3-4-5-6, 3
+    	// 要變成1-2-3-5-6
+    	
+    	// 1-2-3, 3
+    	// 要變成2-3
+    	
+    	// 1-2-3, 1
+    	// 要變成1-2
+    	// make 2.next = null
+    	
+    	
         // 考慮刪除第一個node的狀況
+    	// dummy head可以避開edge case
         ListNode dummy = new ListNode(0);
         dummy.next = head;
         
         ListNode n1=dummy;
         ListNode n2=dummy;
-        for(int i=0; i<= n; i++){
-            n2=n2.next;
-        }
-        while(n2!=null){
-            n1=n1.next;
-            n2=n2.next;
-        }
         
-        // remove n1.next;
-        n1.next = n1.next.next;
-        
-        return dummy.next;
+    	for(int i=0;i<n;i++){
+    	    n2=n2.next;
+    	}
+    	
+    	while(n2.next!=null){
+    	    n1=n1.next;
+    	    n2=n2.next;
+    	}
+    	//此時n2為last element
+    	// 1-2-3, n=1的case下, n1會是2
+    	// 1-2-3, n=3的case下, n1會是dummy
+    	
+    	n1.next = n1.next.next;
+    	return dummy.next;    
     }
 }

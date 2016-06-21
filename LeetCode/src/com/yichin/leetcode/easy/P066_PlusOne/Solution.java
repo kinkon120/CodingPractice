@@ -8,6 +8,7 @@ public class Solution {
     public int[] plusOne(int[] digits) {
         // https://leetcode.com/discuss/58149/my-simple-java-solution
         // 其實只要考慮9+1變成0的狀況, 還有注意最左邊的digit是否為9
+    	// 1ms
         for(int i=digits.length-1; i>=0;i--){
             if(digits[i]!=9){
                 digits[i]++;
@@ -26,22 +27,15 @@ public class Solution {
         /*
         int c = 1;
         for(int i=digits.length-1 ; i>=0; i--){
-            int sum = digits[i] + c;
+            int sum = digits[i] + 1;
             digits[i] = sum%10;
             c = sum/10;
-            if(c==0) break;
+            if(c==0) return digits;
         }
         
-        if(c==1){
-            int [] result = new int [digits.length+1];  
-            result[0]=1;
-            for(int i=0;i<digits.length;i++){
-                result[i+1] = digits[i];
-            }
-            return result;
-        }else{
-            return digits;    
-        }
+        int [] result = new int [digits.length+1];  
+        result[0]=1;
+        return result;
         */
     }
 }

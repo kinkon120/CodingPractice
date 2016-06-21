@@ -29,7 +29,7 @@ public class Solution {
         Set<Integer> set = new HashSet<Integer>();
         for(int i=x1;i<=x2;i++){
             for(int j=y1;j<=y2;j++){
-                if(board[i][j]!='.'){
+                if(board[i][j]!='.'){	//沒這一行會出錯
                     if(set.contains(board[i][j]-'0')){
                         return false;
                     }else{

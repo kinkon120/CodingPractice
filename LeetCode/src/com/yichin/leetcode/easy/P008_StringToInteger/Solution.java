@@ -41,7 +41,7 @@ public class Solution {
         if(c0=='-')  isNegative = true;
         if(c0=='-' || c0=='+')    str = str.substring(1); // skip the sign
         
-        long result=0;
+        long result=0;	// for overflow purpose
         char [] cs = str.toCharArray();
         for(char ch : cs){
             if(ch >= '0' && ch<='9'){

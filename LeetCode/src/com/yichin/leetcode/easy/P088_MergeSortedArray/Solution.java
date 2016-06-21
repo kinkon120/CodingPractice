@@ -32,6 +32,7 @@ public class Solution {
             else nums1[k--]=nums2[j--];
         }
         // check 是否有剩下的
+        // 如果剩下的都是nums1  則不用擔心  因為值本來就在那邊了
         while(j>=0) nums1[k--]=nums2[j--];
     }
 }

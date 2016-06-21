@@ -32,6 +32,7 @@ public class Solution {
             p /=10;
         }
         
+        // 等於預留一位  保證此時q絕對不會overflow
         return p==x%10 && q==x/10;  //true when gfedcba = abcdefg, 避開了gfedcba可能會overflow的狀況
         
     }

@@ -37,7 +37,7 @@ public class Solution {
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
         // https://leetcode.com/discuss/22538/my-dfs-and-bfs-java-solution
         // 有recursive的做法可參考
-        
+
     	LinkedList<List<Integer>> lists = new LinkedList<List<Integer>>();  // 左邊要宣告為LinkedList, 不然沒法用addFirst的方法
         if(root == null)    return lists;
         
@@ -62,8 +62,11 @@ public class Solution {
                 
             }
             lists.addFirst(listInt);
+          //也可以直接做lists.add(listInt);  最後return之前在reverse就好
             listNode = tmpNode;
         }
+        
+        
         return lists;
     }
 }

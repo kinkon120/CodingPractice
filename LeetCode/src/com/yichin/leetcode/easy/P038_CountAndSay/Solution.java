@@ -18,7 +18,7 @@ Given an integer n, generate the nth sequence
  7.     13112221
  8.     1113213211
  9.     31131211131221
- 10.   13211311123113112211
+ 10.   	13211311123113112211
 
 */
 public class Solution {

@@ -37,17 +37,17 @@ public class Solution {
         return head;
         
         /*
-        // 2ms
+        // 1ms
         // dummy head
         ListNode dummy = new ListNode(1);
         ListNode p = dummy;
 
         while(l1!=null && l2!=null){
             if(l1.val<l2.val){
-                p.next = new ListNode(l1.val);
+                p.next = l1;
                 l1=l1.next;
             }else{
-                p.next = new ListNode(l2.val);
+                p.next = l2;
                 l2=l2.next;
             }
             p=p.next;   // 要記得move...

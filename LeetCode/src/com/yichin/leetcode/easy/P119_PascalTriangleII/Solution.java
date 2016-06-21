@@ -25,7 +25,7 @@ public class Solution {
             for(int j=i-1; j>0; j--){   //加了1之後, list.get(i)就會是1, 所以從i-1開始處理
                 list.set(j, list.get(j)+list.get(j-1)); // 這樣每一個element都會被計算到正確的值去
                 // 用rowIndex為4的case
-                // 如何從 1 3 3 1 1 得到1 4 6 4 1
+                // 如何從 1 3 3 3 1 得到1 4 6 4 1
                 // 走一次就知道了
             }
         }

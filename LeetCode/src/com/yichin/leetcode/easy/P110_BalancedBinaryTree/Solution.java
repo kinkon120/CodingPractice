@@ -22,6 +22,8 @@ public class Solution {
         // 自己寫的, 但跟下面這個類似 
         // https://leetcode.com/discuss/29893/solution-height-every-recursion-avoid-further-useless-search
         // 2ms
+    	
+    	// 用-1表示已經不balance了  直接往上傳值
         if(root==null)  return true;
         if(getHeight(root) != -1)   return true;
         return false;

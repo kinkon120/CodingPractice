@@ -21,6 +21,9 @@ public class Solution {
         if(nums==null || nums.length==0)  return 0;
         if(nums.length==1)   return nums.length;
         
+        
+        // 1 2 2 2 3 3
+        // -> 1 2 3
         int ind=1;
         for(int i=1;i<nums.length;i++){
             if(nums[i-1] != nums[i]){
@@ -28,6 +31,7 @@ public class Solution {
             }
         }
         // 不用做ind--, 看一下範例
+        // 因為一開始的index是0
         return ind;
     }
 }

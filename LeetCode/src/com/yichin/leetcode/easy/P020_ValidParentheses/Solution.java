@@ -17,12 +17,15 @@ public class Solution {
             char c = s.charAt(i);
             if(c=='[' || c=='{' || c=='('){
                 stack.push(c);
+            // 要先檢查stack是否為空再peek, 不然會出錯
             }else if(c==']' && !stack.isEmpty() && stack.peek()=='[') stack.pop();
             else if(c=='}' && !stack.isEmpty() && stack.peek()=='{') stack.pop();
             else if(c==')' && !stack.isEmpty() && stack.peek()=='(') stack.pop();
             else return false;  // 這個狀況考慮了stack中沒左括號卻先塞右括號
         }
+        
         // return true if no open parentheses left in stack, 不能都是true...
+        // 還有剩下的open parenthesis就不行
         return stack.isEmpty();
 
     }
