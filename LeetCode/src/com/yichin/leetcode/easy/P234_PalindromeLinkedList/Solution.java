@@ -37,6 +37,10 @@ public class Solution {
         ListNode slownext = head.next;
         ListNode pre = head;
         
+        // 走完這個while時會把前半段全部翻轉
+        // 記得要額外用兩個pointer
+        // slownext 是暫存下一個
+        // pre 是為了翻轉
         while(fast.next!=null && fast.next.next!=null){
             fast = fast.next.next;
             

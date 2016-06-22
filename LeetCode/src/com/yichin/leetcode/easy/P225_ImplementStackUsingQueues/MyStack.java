@@ -19,6 +19,7 @@ You may assume that all operations are valid (for example, no pop or top operati
 // https://leetcode.com/discuss/40202/only-push-others-using-queue-combination-shared-solutions
 
 class MyStack {
+	
     Queue<Integer> q = new LinkedList<Integer>();
     // Push element x onto stack.
     public void push(int x) {

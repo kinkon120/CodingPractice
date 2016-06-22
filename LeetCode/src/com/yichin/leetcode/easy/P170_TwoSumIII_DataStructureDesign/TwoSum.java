@@ -53,7 +53,7 @@ public class TwoSum {
     // 理論上是可行的 跟HashMap比較一下
     /*
     Set<Integer> nums;
-    Set<Integer> nums2;
+    Set<Integer> nums2;	// 存重複的數字
 
     public TwoSum(){
         nums = new HashSet<Integer>();
@@ -69,9 +69,9 @@ public class TwoSum {
 	public boolean find(int value) {
 	    for(int k : nums){
 	        int diff = value - k;
-	        if(diff == k){
+	        if(diff == k){	// 代表value = k*2, 只有k出現兩次的狀況才可能
 	            return nums2.contains(k);
-	        }else{
+	        }else{	// 正常狀況
 	            if(nums.contains(diff)) return true;
 	        }
 	    }

@@ -37,31 +37,33 @@ public class Solution {
         return result;
     }
     
+    // recursive
     void dfs(List<String> result, TreeNode root, List<Integer> path){
-        if(root == null) return;
+        // edge case
+        if(root == null){
+            return;
+        }
         
         path.add(root.val);
         // reach leaf
         if(root.left==null && root.right==null){
-            result.add(generatePath(path));
-            path.remove(path.size()-1);
-            return;
+            result.add(getPath(path));
+        }else{
+            // recursive call
+            if(root.left != null)   dfs(result, root.left, path);
+            if(root.right != null)   dfs(result, root.right, path);
         }
-        
-        if(root.left!=null) dfs(result, root.left, path);
-        if(root.right!=null) dfs(result, root.right, path);
-        
-        // return之前要確定把自己remove掉...
+        // remove root from path
         path.remove(path.size()-1);
+        return;
     }
     
-    String generatePath(List<Integer> path){
+    String getPath(List<Integer> path){
         StringBuilder sb = new StringBuilder();
         for(int i=0; i<path.size(); i++){
-            if(i!=0)    sb.append("->");
-            sb.append(path.get(i));
+            if(i==0)    sb.append(path.get(i));
+            else    sb.append("->" + path.get(i));
         }
-        
         return sb.toString();
     }
 }

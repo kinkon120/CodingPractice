@@ -22,9 +22,13 @@ public class Solution {
         byte [] b = new byte[4];
         for(int i=0; i<4; i++){
             b[i] = (byte)(n>>>i*8 & 0xFF);
+            // b[0]~b[3]各代表了 1 byte = 8 bits
+            // b這個array 總共代表了32 bits
+            // 上面這個例子 n -> b[3]b[2]b[1]b[0]組成
         }
         int result=0;
         for(int i=0;i<4;i++){
+        	// 基本精神就是用一個HashMap, 一次處理4 bit
             result = result<<8;
             result += getValue(b[i]);
         }
@@ -46,8 +50,11 @@ public class Solution {
     
     int getValue(byte b){
         Integer k = map.get(b);
+        // 代表已經建構過了
+    	// 得用Integer才能夠說他是null
         if(k!=null) return k;
         
+        // 該b值還沒有找到對應的k值，計算並更新到Map中
         k=0;
         int bInt = (int) b;
         for(int i=0;i<8;i++){

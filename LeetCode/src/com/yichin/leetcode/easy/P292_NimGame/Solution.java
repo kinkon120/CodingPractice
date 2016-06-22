@@ -8,7 +8,7 @@ package com.yichin.leetcode.easy.P292_NimGame;
 */
 public class Solution {
 	/*
-	 * �?路: 從base case往後推
+	 * 思路: 從base case往後推
 	 * 剩1,2,3個 -> 直接全拿光 win
 	 * 剩4個 -> 必輸
 	 * 剩5,6,7個 -> 拿到剩4個 win

@@ -17,6 +17,8 @@ public class Solution {
         int areaA = (C-A)*(D-B);
         int areaB = (G-E)*(H-F);
         
+        // left, bottom 取max
+        // right, top 取min
         int left=Math.max(A,E);
         int right=Math.min(C,G);
         int bottom=Math.max(B,F);

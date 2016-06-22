@@ -9,6 +9,7 @@ public class Solution {
     public int trailingZeroes(int n) {
         // 只要有一個5就會有一個0
         // 但要考慮 5^k的狀況
+    	// 簡單講  考慮有多少個5的因數
         
         // n=20 -> 4
         // n=26 -> 6
