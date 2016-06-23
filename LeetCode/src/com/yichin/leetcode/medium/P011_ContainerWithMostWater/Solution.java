@@ -19,13 +19,17 @@ public class Solution {
         int left=0;
         int right=height.length-1;
         while(left < right){
-            maxArea = Math.max(maxArea, Math.min(height[left], height[right])*(right-left));
+            maxArea = Math.max(maxArea, Math.min(height[left], height[right]) * (right-left));
+            
+            
+            if(height[left] > height[right]){
+            	// 此時right 指標往右移  才有機會造成比較大的高度
+                right--;
+            }else{
+                left++;
+            }
         }
-        if(height[left] > height[right]){
-            right--;
-        }else{
-            left++;
-        }
+
         
         return maxArea;
     }

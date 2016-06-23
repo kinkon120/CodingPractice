@@ -24,8 +24,10 @@ public class Solution {
         int len = nums.length;
         List<List<Integer>> results = new ArrayList<List<Integer>>();
         for(int i=0;i<len-2;i++){
-            // little optimization
+            
+        	// little optimization, 如果第一個數已經大於0，後面根本不用繼續做了...
             if(nums[i] > 0) break;
+            
             // avoid duplicate
             if(i>0 && nums[i]==nums[i-1])    continue;
             

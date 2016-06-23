@@ -22,6 +22,7 @@ public class Solution {
     public List<List<Integer>> fourSum(int[] nums, int target) {
         // https://leetcode.com/discuss/32594/clean-accepted-java-o-n-3-solution-based-on-3sum
         // 這個解法比較清晰
+    	// 跟3-sum一樣的邏輯
         
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         if(nums==null || nums.length<4) return result;
@@ -31,6 +32,8 @@ public class Solution {
             if(i>0 && nums[i]==nums[i-1]) continue; // each one must be unique. 前面加上i>0是代表第一個
             for(int j=i+1; j<nums.length-2;j++){
                 if(j>i+1 && nums[j]==nums[j-1]) continue;
+                
+                // 簡單優化: 若nums[i]+nums[j]>0, 就不用繼續了
                 
                 int low=j+1; 
                 int high=nums.length-1;

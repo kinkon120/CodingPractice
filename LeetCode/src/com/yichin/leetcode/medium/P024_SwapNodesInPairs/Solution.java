@@ -25,13 +25,17 @@ Your algorithm should use only constant space. You may not modify the values in 
 */
 public class Solution {
     public ListNode swapPairs(ListNode head) {
-        // recursice way
-        // 0ms
+        //edge case
         if(head==null || head.next==null)   return head;
         
+        // recursice way
+        // 0ms
         ListNode newHead = head.next;
-        head.next = swapPairs(newHead.next);
+        ListNode swapped = swapPairs(newHead.next);
+        
         newHead.next = head;
+        head.next = swapped;
+        
         return newHead;
         
         // 0ms, 自己想的方法一次到位  爽阿!
