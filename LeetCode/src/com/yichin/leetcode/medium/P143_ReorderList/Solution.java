@@ -55,6 +55,7 @@ public class Solution {
         ListNode pre = null;
         ListNode next = cur.next;
         while(next!=null){
+        	// 多用一個tmp, 會讓事情比較簡單
             ListNode tmp = next.next;
             next.next=cur;
             cur.next=pre;

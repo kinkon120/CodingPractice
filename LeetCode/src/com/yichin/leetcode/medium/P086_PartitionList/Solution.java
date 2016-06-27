@@ -31,6 +31,7 @@ public class Solution {
     public ListNode partition(ListNode head, int x) {
         if(head==null)  return null;
         
+        // dummy trick
         ListNode less = new ListNode(0);
         ListNode more = new ListNode(0);
         ListNode lessHead = less;

@@ -33,7 +33,7 @@ public class Solution{
             5 + {1,2,3,4} permutation (4!=24種)
             83=24+24+24+9, 所以會落在4+{1,2,3,5}這個裡面
             
-            接下來是1,2,3,4
+            接下來是1,2,3,5
             1+{2,3,4} 6種
             2+{1,3,4} 6種
             3+{1,2,4} 6種
@@ -56,7 +56,18 @@ public class Solution{
         
         StringBuilder sb = new StringBuilder();
         k--; // bias offset
-        for(int j=n;j>0;j--){
+        // 可以用extreme case解釋
+        // 12345的case
+        // 若k=1--> 找第0個, return 12345
+        
+        // 若k=120 -> 找第119個, return 54321
+        // 取得的index依序為 
+        // 119/4! = 119/24 = 4
+        // (119-24*4)/3! = 23/6 = 3
+        // (23-3*6)/2! = 5/2 = 2
+        // (5-2*2)/1! = 1
+        // (1-1)/1! = 0	--> 最後的一個元素不會被省略的
+        for(int j=n;j>0;j--){	// n~1總共會做n次
             int index = k/fac[j-1];
             sb.append(nums.get(index));
             nums.remove(index);

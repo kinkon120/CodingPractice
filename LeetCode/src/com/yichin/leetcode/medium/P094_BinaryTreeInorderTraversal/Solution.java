@@ -35,7 +35,7 @@ public class Solution {
            }
            cur = stack.pop();// Backtracking to higher level node A
            result.add(cur.val);// Add the node to the result list
-           cur = cur.right;// Switch to A'right branch
+           cur = cur.right;// Switch to A'right branch. 當cur為null時，會skip inner while loop, 直接pop下一個
        }
        return result;
        

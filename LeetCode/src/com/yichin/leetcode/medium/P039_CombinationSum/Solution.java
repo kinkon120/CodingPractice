@@ -37,6 +37,7 @@ public class Solution {
         }
         if(target > 0){
             for(int i=start; i<nums.length && target>=nums[i]; i++){
+            	//  一直往後面找就是了
                 curList.add(nums[i]);
                 helper(nums, i, target-nums[i], curList, results);
                 curList.remove(curList.size()-1);   // 重要!!要把之前的加入的移除掉

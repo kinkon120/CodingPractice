@@ -21,6 +21,7 @@ public class Solution {
         
         char [] c = s.toCharArray();
         int max = 1;
+        // 計算從i開始的最長且不重複字符的字串長度
         for(int i=0;i<s.length();i++){
             Set<Character> set = new HashSet<Character>();
             for(int j=i;j<s.length();j++){

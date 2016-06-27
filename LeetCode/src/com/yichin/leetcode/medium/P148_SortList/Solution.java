@@ -23,13 +23,15 @@ public class Solution {
         // divide
         ListNode slow=head;
         ListNode fast=head;
-        ListNode pre = null;
+        ListNode tailOfFirstHalf = null;
+        // 1234567  -> 想切成1234 567
+        // 123456 -> 想切成123 456
         while(fast!=null && fast.next!=null){   // 不要用fast.next==null && fast.next.next==null這個條件
-            pre = slow;     // 這個要留著切成兩半
+            tailOfFirstHalf = slow;     // 這個要留著切成兩半
             slow=slow.next;
             fast=fast.next.next;
         }
-        pre.next=null;
+        tailOfFirstHalf.next=null;
         
         ListNode m1=sortList(head);
         ListNode m2=sortList(slow);

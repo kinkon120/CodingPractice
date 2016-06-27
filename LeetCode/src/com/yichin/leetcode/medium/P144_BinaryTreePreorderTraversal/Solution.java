@@ -29,6 +29,7 @@ public class Solution {
         
         Stack<TreeNode> stack = new Stack<TreeNode>();
         stack.push(root);
+        // 直接畫圖解最快
         while(!stack.isEmpty()){
             TreeNode pop = stack.pop();
             result.add(pop.val);

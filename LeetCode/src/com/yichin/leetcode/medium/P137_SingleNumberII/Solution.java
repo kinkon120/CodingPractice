@@ -13,16 +13,25 @@ public class Solution {
         // https://leetcode.com/discuss/857/constant-space-solution
         // 用一個new int [32]來記錄每一個bit出現的次數
         // 10ms
-        int [] freq = new int [32];
-        int result = 0;
+        int [] f = new int [32];
         
-        for(int i=0;i<32;i++){
-            for(int n : nums){
-                if( ((n>>i)&1) ==1 ) freq[i]++; //注意優先權...擔心就用擴號包起來比較安全
+        // 紀錄每個bit出現的次數
+        for(int n:nums){
+            int i=0;
+            while(n!=0){
+                if( (n&1) ==1 ) f[i]++;	// 用&的時候一定要用括號包起來!!
+                n>>>=1;	// 要注意負數case, so unsigned shift
+                i++;
             }
-            result = result + (freq[i]%3) * (1<<i);
         }
-        return result;
+        
+        int k=0;
+        for(int i=0;i<32;i++){
+            k += f[i]%3 * (1<<i);
+        }
+        
+        return k;
+
         
         // naive solution: hashMap
         // 16 ms

@@ -17,21 +17,19 @@ public class Solution {
         if(nums==null || nums.length==0) return null;
         
         // 1ms rescursive
-        return sortedArray(nums,0,nums.length-1);
-    }
+        return helper(nums,0,nums.length-1);
+    }        
     
-    TreeNode sortedArray(int [] nums, int left, int right){
-        // check boundary
-        if(left>right) return null;
+    TreeNode helper(int [] nums, int left, int right){
+    	// only one node in this range
+        if(left == right) return new TreeNode(nums[left]);
         
         int mid = (left+right)/2;
         TreeNode root = new TreeNode(nums[mid]);
-        //if(left!=mid){    --> 不需要檢查, 會return null
-            root.left = sortedArray(nums,left,mid-1);
-        //}
-        //if(right!=mid){
-            root.right = sortedArray(nums,mid+1, right);
-        //}
+        
+        if(left!=mid)   root.left=helper(nums, left, mid-1);	// still have some in left subtree
+        if(right!=mid)   root.right=helper(nums, mid+1, right);	// still have some in right subtree
+        
         return root;
     }
 }

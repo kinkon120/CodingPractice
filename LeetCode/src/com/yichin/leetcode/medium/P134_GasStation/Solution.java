@@ -19,6 +19,7 @@ public class Solution {
         
         for(int i=0;i<len;i++){
             gas[i] -= cost[i];
+            // gas[i]代表可剩餘的gas有多少
         }
         // now gas means how many allowance!
         // O(n)

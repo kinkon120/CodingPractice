@@ -1,8 +1,9 @@
 package com.yichin.leetcode.common;
 
-public class ReverseListByWhile {
+public class ReverseListByRecursive {
 
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 		ListNode n1 = new ListNode(1);
 		ListNode n2 = new ListNode(2);
 		ListNode n3 = new ListNode(3);		
@@ -18,23 +19,17 @@ public class ReverseListByWhile {
 			System.out.println(newHead.val);
 			newHead = newHead.next;
 		}
-	}
 
+	}
+	
 	static ListNode reverse(ListNode head){
-		ListNode pre = null;
-		ListNode cur = head;
-		ListNode next = head.next;
+		if(head.next == null)	return head;
 		
-		while(next!=null){
-			// 多用一個tmp, 會讓事情比較簡單
-			ListNode tmp = next.next;
-			next.next=cur;
-			cur.next=pre;
-			
-			pre=cur;
-			cur=next;
-			next=tmp;
-		}
-		return cur;
-	} 
+		ListNode newHead = reverse(head.next);
+		head.next.next = head;
+		head.next=null; //超重要!!
+		return newHead;
+	}
+	
+
 }

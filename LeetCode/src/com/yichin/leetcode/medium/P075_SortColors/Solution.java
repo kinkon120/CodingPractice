@@ -35,6 +35,7 @@ public class Solution {
                 nums[i]=nums[high];
                 nums[high]=2;
                 high--;
+                // 不用i++, 可能從屁股(nums[high])swap過來的新元素下一輪還得被swap到後面去
             } else {
                 i++;
             }

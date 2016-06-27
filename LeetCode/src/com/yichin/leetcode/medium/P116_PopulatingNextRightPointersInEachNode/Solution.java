@@ -65,10 +65,13 @@ public class Solution {
     }
     
     void connect(TreeLinkNode n1, TreeLinkNode n2){
-        n1.next=n2;
-        if(n1.left!=null){
-            connect(n1.right, n2.left);    // ??????
-            connect(n1.left, n1.right);
+        if(n1==null)    return;
+        
+        n1.next = n2;
+        connect(n1.left, n1.right);
+        
+        if(n2!=null){
+            connect(n1.right, n2.left);
             connect(n2.left, n2.right);
         }
     }

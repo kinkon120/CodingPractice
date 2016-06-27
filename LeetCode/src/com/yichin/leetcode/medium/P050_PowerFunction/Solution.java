@@ -15,6 +15,7 @@ public class Solution {
             n *= -1;
         }    
         
+        // log n trick
         double result = myPow(x,n/2);
         result *= result;
         if(n%2==1)  result*=x;

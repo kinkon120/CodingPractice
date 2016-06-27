@@ -23,6 +23,7 @@ public class Solution {
         boolean firstRowZero = false;
         boolean firstColZero = false;
         
+        // 決定第一行是否要全設0
         for(int i=0;i<n;i++){
             if(matrix[0][i]==0){
                 firstRowZero = true;
@@ -30,13 +31,15 @@ public class Solution {
             }
         }
         
-         for(int i=0;i<m;i++){
+        // 決定第一行是否要全設0
+        for(int i=0;i<m;i++){
             if(matrix[i][0]==0){
                 firstColZero = true;
                 break;
             }
         }
         
+        //用第一欄跟第一列存設0的資訊
         for(int i=1;i<m;i++){
             for(int j=1;j<n;j++){
                 if(matrix[i][j]==0){
@@ -45,7 +48,8 @@ public class Solution {
                 }
             }
         }
-
+        
+        //設0
         for(int i=1;i<m;i++){
             for(int j=1;j<n;j++){
                 if(matrix[0][j]==0 || matrix[i][0]==0){
@@ -54,6 +58,7 @@ public class Solution {
             }
         }        
         
+        //回頭check第一行跟第一列
         if(firstRowZero){
             for(int i=0;i<n;i++){
                 matrix[0][i]=0;

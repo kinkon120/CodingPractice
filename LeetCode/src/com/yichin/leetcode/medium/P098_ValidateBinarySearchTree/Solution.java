@@ -30,6 +30,7 @@ public class Solution {
     boolean isValidBST(TreeNode node, long min, long max){
         if( node == null ) return true;
         if( (node.val >= max) || (node.val <= min)) return false;
+        // update ranges for left/right nodes
         return isValidBST(node.left, min, node.val) && isValidBST(node.right, node.val, max);
     }
     // https://leetcode.com/discuss/21411/my-simple-java-solution-in-3-lines

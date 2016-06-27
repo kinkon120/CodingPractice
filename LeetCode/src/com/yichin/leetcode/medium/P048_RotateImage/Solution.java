@@ -10,12 +10,12 @@ Could you do this in-place?
 
 public class Solution {
     public void rotate(int[][] matrix) {
-        // 先做tranpose (行列互換)
+        // 先做transpose (行列互換)
         // 再左右調換
         
         /*
         123                 147             741
-        456 -transpose->    258 -左右調換-> 852
+        456 -transpose->    258 -左右調換->  852
         789                 369             963
         */
         

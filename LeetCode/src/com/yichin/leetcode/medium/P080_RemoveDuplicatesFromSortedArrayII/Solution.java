@@ -16,6 +16,7 @@ public class Solution {
         int i = 0;
         for (int n : nums){
             if (i < 2 || n > nums[i-2]){
+            	// i=0 or i=1的case下不可能就出現重複第三個的狀況
                 nums[i++] = n;
             }
         }

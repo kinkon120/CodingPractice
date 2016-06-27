@@ -7,7 +7,7 @@ Compute and return the square root of x.
 public class Solution {
     public int mySqrt(int x) {
         // https://leetcode.com/discuss/24942/a-binary-search-solution
-        // binary search
+        // binary search, 從min_value~max_value的range開始找
         // 有一些trick避免overflow...
         // 必定終止, 最後只要返回整數部分....
         // 3 ms

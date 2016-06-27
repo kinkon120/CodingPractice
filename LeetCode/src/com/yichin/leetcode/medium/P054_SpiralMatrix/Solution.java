@@ -29,21 +29,27 @@ public class Solution {
         // row: 1
         int top = 0; 
         int bottom = matrix.length-1;
-        // column: 2
         int left = 0;
         int right = matrix[0].length-1;
         
         // while不能用 left<=right && top<=bottom做條件，因為裡面每一個for可能都會終止!
         while(true){
+        	// go left [top][x]
             for(int col=left;col<=right;col++)    result.add(matrix[top][col]);
             top++;
             if(top>bottom) break;
+            
+            // go down [x][right]            
             for(int row=top;row<=bottom;row++)    result.add(matrix[row][right]);
-            right--;
+            right--;            
             if(left>right) break;
+            
+            // go right [bottom][x]
             for(int col=right;col>=left;col--)    result.add(matrix[bottom][col]);
             bottom--;
             if(top>bottom) break;
+            
+            // go up [x][left]
             for(int row=bottom;row>=top;row--)    result.add(matrix[row][left]);
             left++;
             if(left>right) break;

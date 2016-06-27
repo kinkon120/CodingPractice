@@ -15,11 +15,33 @@ public class Solution {
         // https://leetcode.com/discuss/18242/clean-iterative-solution-binary-searches-with-explanation
         // https://leetcode.com/discuss/19368/very-simple-java-solution-with-only-binary-search-algorithm
         
-        // ¥ı§ä¥ªÃä¦A§ä¥kÃä
-        // ­n¥ı°²³]¦nedge case
-        // 1. ³Ì¤p¼Æ¦r¤j©ótarget
-        // 2. ³Ì¤j¼Æ¦r¤p©ótarget
-        // 3. target¦b¦X²z½d³ò¤º¦ı§ä¤£¨ì
+    	/**ä¸ç°¡å–®çš„é¡Œç›®  å¯é‡è¤‡åˆ©ç”¨ä¸‹é¢çš„é‚è¼¯**/ 
+    	/*
+       	//find the first number that is greater than or equal to target.
+    	//could return A.length if target is greater than A[A.length-1].
+    	//actually this is the same as lower_bound in C++ STL.
+		    private static int firstGreaterEqual(int[] A, int target) {
+		        int low = 0, high = A.length;
+		        while (low < high) {
+		            int mid = low + ((high - low) >> 1);
+		            //low <= mid < high
+		            if (A[mid] < target) {
+		                low = mid + 1;
+		            } else {
+		                //should not be mid-1 when A[mid]==target.
+		                //could be mid even if A[mid]>target because mid<high.
+		                high = mid;
+		            }
+		        }
+		        return low;
+		    }
+		*/
+
+        // å…ˆæ‰¾å·¦é‚Šå†æ‰¾å³é‚Š
+        // è¦å…ˆåˆ—å¥½edge case
+        // 1. æœ€å°æ•¸å­—å¤§æ–¼target
+        // 2. æœ€å¤§æ•¸å­—å°æ–¼target
+        // 3. targetåœ¨åˆç†ç¯„åœå…§ä½†æ‰¾ä¸åˆ°
         int s = 0;
         int e = nums.length-1;
         
@@ -32,6 +54,7 @@ public class Solution {
             if(nums[mid] < target)  s=mid+1;
             else e=mid;
         }
+        // target: 2
         // 1,1,2,2,2,2,2,2,3,3
         // 0 1 2 3 4 5 6 7 8 9
         // s       m         e
@@ -39,14 +62,14 @@ public class Solution {
         // s m e
         // s and e meet in index 2
         
-        // ¦¹®Énums[s]¬O²Ä¤@­Ó¤£¤p©ótargetªº¼Æ¦r
-        // ¤£match¥Nªí¤@­Ótarget³£§ä¤£¨ì
+        // æ­¤æ™‚nums[s]æ˜¯ç¬¬ä¸€å€‹"ä¸å°æ–¼"targetçš„æ•¸å­—
+        // ä¸matchä»£è¡¨ä¸€å€‹targetéƒ½æ‰¾ä¸åˆ°
         if(nums[s]!= target) return result;
         
         result[0]=s;
         
         // find right
-        e = nums.length; // ¤£¯à¥Înums.length-1, ¦³¥i¯à³Ì«á¤@­Ó¼Æ¦r¤]¬Otarget
+        e = nums.length; // ä¸èƒ½ç”¨nums.length-1, æœ‰å¯èƒ½æœ€å¾Œä¸€å€‹æ•¸å­—ä¹Ÿæ˜¯target
         while(s<e){
             int mid = (s+e)/2;
             if(nums[mid] < target+1)  s=mid+1;
