@@ -22,6 +22,7 @@ public class Solution {
         for(int i=0; i<nums.length;i++){
             if(next == nums[i]){
                 next++;
+                // next代表下一個潛在missing number
                 continue;
             }
             
@@ -32,6 +33,7 @@ public class Solution {
         }
         
         // check final range, 若next > upper, 代表nums[nums.length-1]已涵蓋upper
+        // 不可以只是next != upper
         if(next <= upper)   result.add(getRange(next, upper));
         
         return result;

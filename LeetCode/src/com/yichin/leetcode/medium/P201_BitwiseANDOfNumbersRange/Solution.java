@@ -10,7 +10,17 @@ public class Solution {
     public int rangeBitwiseAnd(int m, int n) {
         // https://leetcode.com/discuss/32017/my-simple-java-solution-3-lines
         // find the leftmost common digits of m and n.
+    	
+    	// Ex: m=13, n=17
+    	// 13 = 01101
+    	// 14 = 01110
+    	// 15 = 01111
+    	// 16 = 10000
+    	// 17 = 10001
+    	// --> return 0
+    	
         int r=Integer.MAX_VALUE;
+        // 用r做mask去找leftmost common
         while( (m&r) != (n&r) )  r=r<<1;    //最後希望達到111110000這種形式
         return m&r;
         

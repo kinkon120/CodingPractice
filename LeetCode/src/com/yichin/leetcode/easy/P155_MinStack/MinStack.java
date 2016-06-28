@@ -53,7 +53,7 @@ class MinStack {
         if(s.pop()==min){
             // restore previous min
             if(s.isEmpty()) min=Integer.MAX_VALUE;
-            else    min = s.pop();
+            else    min = s.pop();	//把前一個min取出來用
         }
     }
 

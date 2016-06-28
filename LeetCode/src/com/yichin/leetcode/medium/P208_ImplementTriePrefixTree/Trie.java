@@ -42,7 +42,7 @@ public class Trie {
             }
             node = node.map.get(c);
         }
-        node.map.put(' ', new TrieNode(' '));   // 代表這個node是最後一個字串
+        node.map.put(' ', new TrieNode(' '));   // 代表這個node是最後一個字符
     }
 
     // Returns if the word is in the trie.
