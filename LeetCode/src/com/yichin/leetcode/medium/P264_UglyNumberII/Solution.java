@@ -24,15 +24,15 @@ public class Solution {
         int [] ugly = new int [n];
         ugly[0]=1;
         
-        int ind1=1, ind2=1, ind3=1;
+        int ind2=1, ind3=1, ind5=1;
         int fac2=2, fac3=3, fac5=5;
         
         for(int i=1; i<n;i++){
             int min = Math.min(Math.min(fac2, fac3), fac5);
             ugly[i] = min;
-            if(fac2==min)   fac2=2*ugly[ind1++];
-            if(fac3==min)   fac3=3*ugly[ind2++];
-            if(fac5==min)   fac5=5*ugly[ind3++];
+            if(fac2==min)   fac2=2*ugly[ind2++];
+            if(fac3==min)   fac3=3*ugly[ind3++];
+            if(fac5==min)   fac5=5*ugly[ind5++];
         }
         
         return ugly[n-1];
@@ -74,7 +74,8 @@ public class Solution {
                 return min;
             }else{
                 n--;
-                if(l2.peek()==min)  l2.poll();
+                // 當min 為6的case, l2跟l3都要同時做poll()
+                if(l2.peek()==min)  l2.poll();	
                 if(l3.peek()==min)  l3.poll();
                 if(l5.peek()==min)  l5.poll();
             }

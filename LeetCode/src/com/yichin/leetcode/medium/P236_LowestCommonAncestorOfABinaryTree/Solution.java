@@ -32,11 +32,14 @@ public class Solution {
          TreeNode l = lowestCommonAncestor(root.left, p, q);
          TreeNode r = lowestCommonAncestor(root.right, p, q);
          
+         
+         // if(l==null && r==null) return null;//代表node以下不包含p and q
+        	 
          // 這個是關鍵...
          // 代表左右child各包一個
          if(l!=null && r!=null)    return root;
          
-         if(r!=null)    return r;
-         return l;
+         if(r!=null)    return r;	// 代表兩個都在右子樹
+         return l;	// 這個涵蓋了  pq都在左子樹  或者左子樹也沒涵蓋pq的case(回傳null)
     }
 }

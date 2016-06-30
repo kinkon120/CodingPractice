@@ -12,7 +12,7 @@ public class Solution {
         if(nums==null || nums.length==0)    return 0;
         
         int s=0;
-        int e=nums.length-1;
+        int e=nums.length-1;        
         while( s<e ){
             int m=(s+e)/2;
             if(nums[m] > nums[e]){ // mid要跟end比, 不是跟start比, 不然0123456的case會走錯邊...
@@ -21,6 +21,13 @@ public class Solution {
                 e=m;
             }
         }
+        
+        // 用不同範例套用多走幾次
+        // 1234567
+        // 2345671
+        // 6712345
+        // 4567123        
+         
         return nums[e];
     }
 }

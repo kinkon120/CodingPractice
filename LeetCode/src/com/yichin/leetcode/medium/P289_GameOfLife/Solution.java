@@ -36,7 +36,6 @@ public class Solution {
         // 1 ms
         int row = board.length;
         int col = board[0].length;
-        int [][] newBoard = new int[row][col];
         int liveN =0;
 
         for(int i=0;i<row;i++){
@@ -84,6 +83,7 @@ public class Solution {
     
     int getLiveNeighbor(int [][] b, int x, int y){
         int cnt=0;
+        // 這個寫法很漂亮  不用每次都去檢查boundary
         for(int i= Math.max(x-1,0); i<=Math.min(x+1, b.length-1); i++){
             for(int j= Math.max(y-1,0); j<=Math.min(y+1, b[0].length-1); j++){
                 if(b[i][j]==1)  cnt++;

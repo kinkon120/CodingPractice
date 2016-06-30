@@ -23,11 +23,16 @@ public class Solution {
         ret[0]=1;
         for(int i=1;i<nums.length;i++){
             ret[i] = ret[i-1]*nums[i-1];
+            // 注意ret[i]不含nums[i]的成分!
         }
+        
+		for(int n:ret){
+			System.out.print(n+"->");
+		}
         
         // 1,2,3,4 -> 24,12,8,6
         // 倒回來看, 現在ret[]最後一個數字已經是我們要的了
-        int rightMul=1; //存目前右邊的所有數字乘積
+        int rightMul=1; //存目前右邊的所有數字乘積       
         for(int i=nums.length-1; i>=0;i--){
             ret[i]=ret[i]*rightMul; // ret[i]是n[0]~n[i-1]的乘積, rightMul是n[i+1]到尾巴的乘積
             rightMul*=nums[i];

@@ -37,6 +37,7 @@ public class Solution {
                 c2=1;
             }else{
             	// 要解釋why兩個都要減1
+            	// Ex: 1,2,3的case -> 其實走完大家次數一樣, 沒有誰特別大, 所以c1, c2都是0
                 c1--;
                 c2--;
             }
