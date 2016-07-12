@@ -34,6 +34,12 @@ public class Solution {
         // 2ms
         // 借用這概念, 但用兩個stack來做reverse -> https://leetcode.com/discuss/56142/java-simple-and-clean
         // 超屌解法 -> https://leetcode.com/discuss/71943/preorder-inorder-and-postorder-iteratively-summarization
+    	
+    	//         1
+    	//    2        3
+    	//  4   5    6    7
+    	//         8   9
+    	// 這個範例走一遍就知道了
         List<Integer> result = new ArrayList<Integer>();
         if(root==null) return result;
 
@@ -44,6 +50,7 @@ public class Solution {
             TreeNode tn = s1.pop();
             s2.push(tn.val);
             
+            // 先push left -> 這樣會先pop right, 然後right tree value被push到s2的時候, 會比left tree晚被pop
             if(tn.left!=null) s1.push(tn.left);
             if(tn.right!=null) s1.push(tn.right);
         }

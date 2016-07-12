@@ -1,4 +1,4 @@
-package com.yichin.leetcode.hard.P128_LongestConsecutiveSequence;
+package com.yichin.leetcode.array.P128_LongestConsecutiveSequence;
 
 import java.util.HashSet;
 import java.util.Set;
