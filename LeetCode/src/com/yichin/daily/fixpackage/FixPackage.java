@@ -15,7 +15,7 @@ public class FixPackage {
 	public static void main(String[] args) throws IOException {
 		//String rootDir = "C:\\workspace\\CodingPractice\\LeetCode\\src\\com\\yichin\\";
 		
-		String rootDir = "C:\\workspace\\CodingPractice\\LeetCode\\src\\com\\yichin\\leetcode\\backtracking";
+		String rootDir = "C:\\workspace\\CodingPractice\\LeetCode\\src\\com\\yichin\\leetcode";
 		
 		checkDir(rootDir);
 	}
