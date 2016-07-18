@@ -13,8 +13,7 @@ import java.nio.file.Paths;
 
 public class FixPackage {
 	public static void main(String[] args) throws IOException {
-		//String rootDir = "C:\\workspace\\CodingPractice\\LeetCode\\src\\com\\yichin\\leetcode";
-		String rootDir = "C:\\workspace\\CodingPractice\\LeetCode\\src\\com\\yichin\\leetcode\\string";
+		String rootDir = "C:\\workspace\\CodingPractice\\LeetCode\\src\\com\\yichin\\leetcode";
 		checkDir(rootDir);
 	}
 
