@@ -34,6 +34,9 @@ public class Solution extends Reader4 {
             int k = read4(buffer);
             if(k<4) eof=true;
             
+            
+            // Ex: n=7, 總共想讀100個, 一次讀4個, 最後一次的k=3, 只讀3個 -> 選k 的case
+            // n-total代表只讀需要的數量, Ex: 有100個char, 但只想讀9(n=9)個, 前兩次都讀4個, 最後一次讀9-8=1個
             int write = Math.min(k, n-total);	//讀k個字符 或者 讀剩下所需的字符
             
             

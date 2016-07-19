@@ -31,7 +31,8 @@ public class Solution {
         int right = minDepth(root.right);
         
         if(root.left==null || root.right==null){
-            // 這時候代表還不是leaf node, 還得繼續走左或者右下去, 但null那邊必定是0, 只能走非null那條
+            // 這時候代表還不一定是leaf node, 還得繼續走左或者右下去, 但null那邊必定是0
+        	// 取非null那條的height
             return Math.max(left,right)+1;
         }
         return Math.min(left,right)+1;

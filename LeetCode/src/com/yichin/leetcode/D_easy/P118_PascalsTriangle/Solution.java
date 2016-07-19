@@ -34,8 +34,10 @@ public class Solution {
             List<Integer> row = new ArrayList<Integer>();
             int size = preRow.size();
             for(int j=0;j<=size;j++){
+            	// head and tail cases
                 if(j==0 || j==size){
                     row.add(1);
+                // internal cases
                 }else{
                     row.add(preRow.get(j)+preRow.get(j-1));
                 }

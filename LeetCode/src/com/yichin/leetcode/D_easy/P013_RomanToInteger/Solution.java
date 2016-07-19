@@ -41,8 +41,8 @@ public class Solution {
             char c2 = cs[i+1];
             // 跟後面的比
             int cur = map.get(c1);
-            int behind = map.get(c2);
-            if(cur >= behind){ 
+            int after = map.get(c2);	// 用after會比較難看
+            if(cur >= after){ 
             	// Ex:VI is 6, II is 2
                 result += cur;
             }else{  
