@@ -16,6 +16,7 @@ Example: 19 is a happy number
 
 public class Solution {
     public boolean isHappy(int n) {
+    	// 看到cycle就要想到
         // use slow/fast trick
         // 2ms, space O(1)
         int slow = n;

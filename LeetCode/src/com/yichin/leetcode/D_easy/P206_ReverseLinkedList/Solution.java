@@ -22,7 +22,7 @@ public class Solution {
         if(head==null || head.next==null)  return head;
         
         // introduce prev pointer
-        // each iteration touchs only two node. 
+        // each iteration touches only two node. 
         ListNode pre = null;
         while(head != null){
             ListNode next = head.next;

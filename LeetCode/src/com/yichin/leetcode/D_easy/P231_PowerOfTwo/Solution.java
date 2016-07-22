@@ -8,6 +8,7 @@ public class Solution {
         // 得先問-16這種算不算power of two...結論是不算...
         // https://leetcode.com/discuss/43875/using-n%26-n-1-trick
         if(n<=0)    return false;
+        // 只有10000000000000000000000這種狀況才是return true
         if( (n&(n-1)) == 0) return true; // 要用對括號!!   
         return false;
         
