@@ -57,7 +57,7 @@ public class Solution {
             cur.next=t2;
             t2.next=t1;
             t1.next=t3;
-            cur = t1;
+            cur = t1;	// 不是cur = t3, 因為一次是swap兩個
         }        
         
         return dummy.next;

@@ -1,4 +1,4 @@
-package com.yichin.leetcode.D_medium.P031_NextPermutation.copy;
+package com.yichin.leetcode.D_medium.P031_NextPermutation;
 /*
 Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers.
 
