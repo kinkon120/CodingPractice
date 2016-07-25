@@ -17,30 +17,37 @@ public class Solution {
         // https://leetcode.com/discuss/14079/my-super-simple-solution-can-used-for-both-spiral-matrix-and
         // 記住四個角落就好了...
         
-        int rowBegin=0;
-        int rowEnd=n-1;
-        int colBegin=0;
-        int colEnd=n-1;
+        int top=0;
+        int bottom=n-1;
+        int left=0;
+        int right=n-1;
         
         int c = 1;
         int [][] m = new int [n][n];
         while(c <= n*n){
-            for(int i=colBegin; i<=colEnd; i++){
-                m[rowBegin][i]=c++;
+        	// go right
+            for(int i=left; i<=right; i++){
+                m[top][i]=c++;
             }
-            rowBegin++;
-            for(int i=rowBegin; i<=rowEnd; i++){
-                m[i][colEnd]=c++;
+            top++;
+            
+            // go down
+            for(int i=top; i<=bottom; i++){
+                m[i][right]=c++;
             }
-            colEnd--;
-            for(int i=colEnd;i>=colBegin;i--){
-                m[rowEnd][i]=c++;
+            right--;
+            
+            // go left
+            for(int i=right;i>=left;i--){
+                m[bottom][i]=c++;
             }
-            rowEnd--;
-            for(int i=rowEnd;i>=rowBegin;i--){
-                m[i][colBegin]=c++;
+            bottom--;
+            
+            // go up
+            for(int i=bottom;i>=top;i--){
+                m[i][left]=c++;
             }
-            colBegin++;
+            left++;
         }
         
         return m;

@@ -24,12 +24,12 @@ public class Solution {
         
         if(nums==null || nums.length<=1) return;
         int first=-1;
-        int second=-1;
+        // int second=-1;  second用first+1表示就好
         int i=nums.length-1;
         for(; i>=1; i--){
             if(nums[i-1] < nums[i]){    // 4 < 9
                 first=i-1;
-                second=i;
+                // second=i; 
                 break;
             }
         }
@@ -49,7 +49,7 @@ public class Solution {
                 }
             }
             
-            reverse(nums, second);
+            reverse(nums, first+1);
         }
     }
     

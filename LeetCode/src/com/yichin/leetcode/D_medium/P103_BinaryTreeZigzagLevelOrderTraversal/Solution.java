@@ -39,14 +39,14 @@ public class Solution {
         if(root == null)    return result;
         
         // record node on the current level
-        List<TreeNode> nodes = new ArrayList<>();
-        nodes.add(root);
-        while(nodes.size()!=0){
+        List<TreeNode> current = new ArrayList<>();
+        current.add(root);
+        while(current.size()!=0){
             List<TreeNode> next = new ArrayList<>();
             List<Integer> nums = new ArrayList<>();
             
-            for(int i=0; i<nodes.size(); i++){
-                TreeNode node = nodes.get(i);
+            for(int i=0; i<current.size(); i++){
+                TreeNode node = current.get(i);
                 nums.add(node.val);
                 if(node.left!=null) next.add(node.left);
                 if(node.right!=null) next.add(node.right);
@@ -59,8 +59,8 @@ public class Solution {
             }
             
             result.add(nums);
-            nodes.clear();
-            nodes.addAll(next);
+            current.clear();
+            current.addAll(next);
         }
         return result;
     }

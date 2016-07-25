@@ -42,12 +42,13 @@ public class Solution {
         return helper(root,0);
     }
     
-    int helper(TreeNode tn, int curSum){
+    int helper(TreeNode tn, int ancestorSum){
         if(tn == null)  return 0;
         // leaf
-        if (tn.right == null && tn.left == null) return curSum*10 + tn.val;
+        if (tn.right == null && tn.left == null) return ancestorSum*10 + tn.val;
+        int  curSum = ancestorSum*10 + tn.val;
 
-        return helper(tn.left, curSum*10 + tn.val) + helper(tn.right, curSum*10 + tn.val);
+        return helper(tn.left, curSum) + helper(tn.right, curSum);
     }
 
     /*

@@ -19,6 +19,9 @@ public class Solution {
     	// 17 = 10001
     	// --> return 0
     	
+    	// Ex:   m=1110111, n=1110101 and answer is 1110100
+    	// r最後會是1111100
+    	
         int r=Integer.MAX_VALUE;
         // 用r做mask去找leftmost common
         while( (m&r) != (n&r) )  r=r<<1;    //最後希望達到111110000這種形式

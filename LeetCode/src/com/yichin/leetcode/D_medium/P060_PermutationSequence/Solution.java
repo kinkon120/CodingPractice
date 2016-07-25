@@ -42,9 +42,9 @@ public class Solution{
         */
         // 3 ms
         
-        List<Integer> nums = new ArrayList<Integer>();
+        List<Integer> candidates = new ArrayList<Integer>();
         for(int i=1;i<=n;i++){
-            nums.add(i);
+            candidates.add(i);
         }
         
         // factorial lookup, 只需要記錄到fac[n-1]
@@ -69,8 +69,8 @@ public class Solution{
         // (1-1)/1! = 0	--> 最後的一個元素不會被省略的
         for(int j=n;j>0;j--){	// n~1總共會做n次
             int index = k/fac[j-1];
-            sb.append(nums.get(index));
-            nums.remove(index);
+            sb.append(candidates.get(index));
+            candidates.remove(index);
             k = k%fac[j-1];
         }
         return sb.toString();

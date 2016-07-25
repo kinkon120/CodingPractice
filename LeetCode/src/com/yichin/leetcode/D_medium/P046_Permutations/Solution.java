@@ -58,6 +58,7 @@ public class Solution {
         for(int i=0;i<=base.size();i++){
         	// 完全copy成一個新的list
             List<Integer> newBase = new LinkedList<Integer>(base);
+            // 把nums[pos]插到newBase中所有可能的位子去
             newBase.add(i, nums[pos]);
             permute(nums, pos+1, newBase, lists);
         }

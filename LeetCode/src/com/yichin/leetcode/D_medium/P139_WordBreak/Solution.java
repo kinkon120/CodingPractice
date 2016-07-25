@@ -10,6 +10,7 @@ s = "leetcode",
 dict = ["leet", "code"].
 
 Return true because "leetcode" can be segmented as "leet code".
+注意可以拆成兩個以上的字...不一定要只拆成兩個
 */
 public class Solution {
     public boolean wordBreak(String s, Set<String> wordDict) {

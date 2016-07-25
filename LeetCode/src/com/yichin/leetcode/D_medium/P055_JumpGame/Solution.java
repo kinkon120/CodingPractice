@@ -16,6 +16,7 @@ public class Solution {
     public boolean canJump(int[] nums) {
         // https://leetcode.com/discuss/22560/java-solution-easy-to-understand
         // 用max紀錄目前可以到的最遠點
+    	// 算是greedy method, 每次update最遠可以到的點
         int max = 0;
         for(int i=0; i<nums.length; i++){
             if(i>max)   return false;	// 目前的i無法reach

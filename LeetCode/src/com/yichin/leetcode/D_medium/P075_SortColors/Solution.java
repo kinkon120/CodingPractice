@@ -26,7 +26,7 @@ public class Solution {
         for(int i=0;i<high;){ // 要會解釋為何要用<=, 而不是等於...用一個boundary case解釋
             // [1,0]應該output [0,1]
             // 如果用i<high, i還沒走到尾巴就停了, 所以要用<=, 逼i走到i=1
-            if(nums[i]==0){ // swap 0 to left
+            if(nums[i]==0){ // swap 0 to low (left)
                 nums[i] = nums[low];
                 nums[low] = 0;
                 i++;
