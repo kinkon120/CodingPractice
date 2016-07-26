@@ -19,7 +19,7 @@ public class Solution {
     public int calculate(String s) {
         // https://leetcode.com/discuss/41902/share-my-java-solution
         // use a stack to save all integers
-        // use an example to illustrate: 8+7/2-3*6/2=8+3+9=20
+        // use an example to illustrate: 8+7/2-3*6/2=8+3-9=4
         
         s = s.replaceAll("\\s","");
         Stack<Integer> stack = new Stack<Integer>();
