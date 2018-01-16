@@ -10,7 +10,7 @@ public class CreateMovePhotos {
 	public static void main(String[] args) {
 
 		List<String> fns = new ArrayList<>();
-		// fns.add("D:\\iphone 照片\\2016_01");
+		fns.add("E:\\iphone照片處理區");
 		for(String fn : fns){
 			processOneFolder(fn);
 		}
