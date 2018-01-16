@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   					   http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 
+    <bean id="message"
+          class="org.springbyexample.di.app.Message">
+        <property name="message" value="Spring is fun." />
+    </bean>
+     -->
+     
+     <!-- Container configures bean (service/dao/domain/action/data source) -->
+     
+     <!-- 當spring framework load, spring就會自動創建一個bean obj and load to memory -->
+     <!-- 用反射機制new一個object, 並指定裡面的member值為何 -->
+     <bean id="userService" class="com.service.UserService">
+     	<property name = "name">
+     		<value>spring 注入值</value>
+     	</property>
+     </bean>
+</beans>
