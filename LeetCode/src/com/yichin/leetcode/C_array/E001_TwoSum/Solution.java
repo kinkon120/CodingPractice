@@ -21,6 +21,7 @@ public class Solution {
         
         // O(n) time, O(n) space
         // 6 ms
+    	// 這個方法可以處理2+2 =4的case  (input [1,2,2,9], target 4)    	
         Map<Integer, Integer> hm = new HashMap<Integer, Integer>(); // value 為index
         
         for(int i=0; i<nums.length; i++){

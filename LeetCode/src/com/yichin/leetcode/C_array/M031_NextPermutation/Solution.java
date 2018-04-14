@@ -25,8 +25,7 @@ public class Solution {
         if(nums==null || nums.length<=1) return;
         int first=-1;
         int second=-1;
-        int i=nums.length-1;
-        for(; i>=1; i--){
+        for(int i=nums.length-1 ; i>=1; i--){
             if(nums[i-1] < nums[i]){    // 4 < 9
                 first=i-1;
                 second=i;
@@ -34,14 +33,14 @@ public class Solution {
             }
         }
         
-        // 極端case
+        // 極端case  Ex: 3,2,1 這個case
         if(first==-1){
             reverse(nums, 0);
             return;
-        }else{
-            // swap 4 and 7
-            for(int j=nums.length-1; j>=0; j--){
-                if(nums[j] > nums[first]){
+        }else{            
+            for(int j=nums.length-1; j>=0; j--){            	
+                if(nums[j] > nums[first]){  // 從後面往前找到第一個比4大的 -> 7
+                	// swap 4 and 7
                     int tmp = nums[j];
                     nums[j] = nums[first];
                     nums[first] = tmp;

@@ -12,8 +12,9 @@ Minimize the total number of operations.
 public class Solution {
     public void moveZeroes(int[] nums) {
     	// total n steps, O(n)
-    	        
-        // move all none zero to front
+    	
+    	// 直覺解
+        // move all none-zero numbers to front
         int p1=0; // write pointer
         for (int num : nums) {
             if (num != 0){

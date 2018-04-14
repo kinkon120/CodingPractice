@@ -15,12 +15,15 @@ public class Solution {
         // 有O(n)解法喔...
         // https://leetcode.com/discuss/10046/share-my-short-solution
         // 記得左邊最高跟右邊最高的高度兩個數字
+    	// 柱子有寬度, 不是無限細的直線!
+    	// 參考圖片  https://leetcode.com/problems/trapping-rain-water/description/
         int s = 0;
         int e = height.length-1;
         int max = 0;
         int rMaxH = 0;
         int lMaxH = 0;
         
+        // 自己畫圖走一遍{0,1,2,1,2,1,3}就知道答案
         while(s<e){    // 解答是用<=, 我覺得用<就可以了, 因為s,e重合的時候, 不能夠重新計算的
             rMaxH = Math.max(rMaxH, height[e]);
             lMaxH = Math.max(lMaxH, height[s]);

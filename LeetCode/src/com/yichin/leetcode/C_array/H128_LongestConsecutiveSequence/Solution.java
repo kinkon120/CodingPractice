@@ -27,6 +27,7 @@ public class Solution {
         
         int result = 1;
         for(int n : nums){
+        	// 從set中的每個元素出發往前後找，已經visit過的得移除掉
             int max = 1;
             set.remove(n);
             
@@ -37,7 +38,6 @@ public class Solution {
             int left=1;
             while(set.remove(n-left))  left++;
             max += (left-1);    //最後一個left其實不存在
-            
             
             // 已經remove成功的代表已經visit過了
             result = Math.max(max,result);

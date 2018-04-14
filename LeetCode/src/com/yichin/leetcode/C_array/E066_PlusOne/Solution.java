@@ -27,7 +27,7 @@ public class Solution {
         /*
         int c = 1;
         for(int i=digits.length-1 ; i>=0; i--){
-            int sum = digits[i] + 1;
+            int sum = digits[i] + c;
             digits[i] = sum%10;
             c = sum/10;
             if(c==0) return digits;

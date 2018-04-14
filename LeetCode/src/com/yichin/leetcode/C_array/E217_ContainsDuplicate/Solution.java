@@ -25,7 +25,7 @@ public class Solution {
         */
         
         /*
-        // Sort and then compare. Time O(NlogN), Space O(1)
+        // Sort and then compare. Time O(n log n), Space O(1)
         // 6ms
         Arrays.sort(nums);
         for(int i=0; i<nums.length-1;i++){

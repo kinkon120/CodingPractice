@@ -20,6 +20,7 @@ In this case, no transaction is done, i.e. max profit = 0.
 
 public class Solution {
     public int maxProfit(int[] prices) {
+    	// O(n) complexity, 不要呆呆用O(n^2)解
         int maxProfit = 0;
         if(prices==null || prices.length<=1)    return maxProfit;
         
