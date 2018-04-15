@@ -1,4 +1,4 @@
-package com.yichin.leetcode.C_array.E119_PascalTriangleII.copy;
+package com.yichin.leetcode.C_array.E119_PascalTriangleII;
 
 import java.util.ArrayList;
 import java.util.List;
