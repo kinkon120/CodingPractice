@@ -1,9 +1,7 @@
 package com.yichin.leetcode.C_hashtable.E170_TwoSumIII_DataStructureDesign;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 /*
 Design and implement a TwoSum class. It should support the following operations: add and find.

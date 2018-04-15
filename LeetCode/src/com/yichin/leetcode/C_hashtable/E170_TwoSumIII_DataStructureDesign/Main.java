@@ -1,7 +1,5 @@
 package com.yichin.leetcode.C_hashtable.E170_TwoSumIII_DataStructureDesign;
 
-import java.util.Date;
-
 public class Main {
 
 	public static void main(String[] args) {
